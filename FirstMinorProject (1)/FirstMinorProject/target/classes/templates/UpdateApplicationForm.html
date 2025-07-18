@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Player</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Update Player</h3>
+        </div>
+        <div class="card-body">
+             <form th:action="@{/updateApplication/{ApplicationId} (ApplicationId=${Application.id})}" th:object="${Application}" method="post">
+                <div class="mb-3">
+                    <label for="dateApplied" class="form-label">dateApplied</label>
+                    <input type="date" th:field="*{dateApplied}" id="dateApplied" class="form-control" placeholder="Enter date of applying">
+                </div>
+
+                <div class="mb-3">
+                    <label for="companyName" class="form-label">Product Description</label>
+                    <input type="text" th:field="*{companyName}" id="companyName" class="form-control" placeholder="Enter name of the company">
+                </div>
+
+                <div class="mb-3">
+                    <label for="positionTitle" class="form-label">Product Category</label>
+                    <input type="text" th:field="*{positionTitle}" id="positionTitle" class="form-control" placeholder="Enter position offered">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="location" class="form-label">Product Price</label>
+                    <input type="text" th:field="*{location}" id="location" class="form-control" placeholder="Enter location of the job">
+                </div>
+                  <div class="mb-3">
+                    <label for="appliedThrough" class="form-label">Product Price</label>
+                    <input type="text" th:field="*{appliedThrough}" id="appliedThrough" class="form-control" placeholder="Enter mode of applying">
+                </div>
+                  <div class="mb-3">
+                    <label for="compensation" class="form-label">Product Price</label>
+                    <input type="text" th:field="*{compensation}" id="compensation" class="form-control" placeholder="Enter compensation offered for the job">
+                </div>
+                  <div class="mb-3">
+                    <label for="status" class="form-label">Product Price</label>
+                    <input type="text" th:field="*{status}" id="status" class="form-control" placeholder="Enter status of the application">
+                </div>
+                  <div class="mb-3">
+                    <label for="lastFollowUp" class="form-label">Product Price</label>
+                    <input type="text" th:field="*{lastFollowUp}" id="lastFollowUp" class="form-control" placeholder= "yyyy-MM-dd">
+                </div>
+                
+
+                <button type="submit" class="btn btn-success">Update Product</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
